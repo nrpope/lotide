@@ -5,11 +5,13 @@ const assertEqual = function(actual, expected) {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-let countLetters = function(string) {
-  string = string.split(" ");
-  string = string.join("");
+let countLetters = function(input) {
+  input = input.split(" ");
+  input = input.join("");
+  // remove all spaces from the string
+  console.log(input);
   let output = {};
-  for (const letters of string) {
+  for (const letters of input) {
     if (output[letters]) {
       output[letters] += 1;
     } else {
@@ -19,4 +21,5 @@ let countLetters = function(string) {
   return output;
 };
 
-console.log(countLetters("Lifestyles of the rich and famous"));
+console.log(countLetters("mississippi"));
+console.log(countLetters("LHL"));
