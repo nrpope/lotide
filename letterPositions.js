@@ -23,5 +23,16 @@ const letterPositions = function(sentence) {
   const results = {};
   // logic to update results here
   let index = 0;
+  for (const letter of sentence) {
+    if (letter !== " ") {
+      if (results[letter]) {
+        results[letter].push(index);
+      } else {
+        results[letter] = index;
+      }
+    }
+  }
   return results;
 };
+
+console.log(letterPositions("lighthouse in the house"));

@@ -9,7 +9,7 @@ let countLetters = function(input) {
   input = input.split(" ");
   input = input.join("");
   // remove all spaces from the string
-  console.log(input);
+  // console.log(input);
   let output = {};
   for (const letters of input) {
     if (output[letters]) {
