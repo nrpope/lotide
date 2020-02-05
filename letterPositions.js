@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 const eqArrays = function(array1, array2) {
   if (array1.length !== array2.length) {
     return false;
@@ -16,6 +8,14 @@ const eqArrays = function(array1, array2) {
     }
   }
   return true;
+};
+
+const assertEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`Assertion Passed: ${actual} === ${expected}`);
+  } else {
+    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  }
 };
 //end of eqArray and assertEqual functions
 
@@ -28,11 +28,16 @@ const letterPositions = function(sentence) {
       if (results[letter]) {
         results[letter].push(index);
       } else {
-        results[letter] = index;
+        results[letter] = [index];
       }
     }
+    index += 1;
   }
   return results;
 };
 
+console.log(letterPositions("Hello"));
 console.log(letterPositions("lighthouse in the house"));
+
+assertEqual(letterPositions("Hello").l, [2, 3]);
+assertEqual(letterPositions("lighthouse in the house").l, [0]);
