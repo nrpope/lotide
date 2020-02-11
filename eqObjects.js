@@ -1,21 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-const eqArrays = function(array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  }
-  for (let i = 0; i < array1.length; i++) {
-    if (array1[i] !== array2[i]) {
-      return false;
-    }
-  }
-  return true;
-};
 //function that takes in two objects and returns true or false based on perfect match
 //obj1 === obj2
 //if else return true/false
@@ -44,17 +26,18 @@ const eqObjects = function(obj1, obj2) {
   return false;
 };
 
-// eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
-// assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
+/*
+eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => true
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true);
 
-// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
-// assertEqual(
-//   eqObjects({ a: { y: [0, 2], z: 1 }, b: 2 }, { a: { y: [0, 2], z: 1 }, b: 2 }),
-//   true
-// );
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }); // => false
+assertEqual(
+  eqObjects({ a: { y: [0, 2], z: 1 }, b: 2 }, { a: { y: [0, 2], z: 1 }, b: 2 }),
+  true
+);
 
-// eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
-// assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
+eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }); // => false
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false);
 
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
@@ -69,3 +52,6 @@ const dc = { d: ["2", 3], c: "1" };
 const cd = { c: "1", d: ["2", 3] };
 eqObjects(cd, dc); // => true
 assertEqual(eqObjects(dc, cd), true);
+*/
+
+module.exports = eqObjects;

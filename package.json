@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
-  "version": "1.0.0",
-  "description": "lotide directory",
+  "name": "@nrpope/lotide",
+  "version": "1.0.1",
+  "description": "Lotide mini clone Project for Lighthouse Labs",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
